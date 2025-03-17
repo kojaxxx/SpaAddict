@@ -1,0 +1,45 @@
+.spa-header {
+    background-color: #2d3339;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+      }
+      
+      .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+      
+      .logo-text {
+        color: #4db6ac;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+      }
+      
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: #4db6ac;
+      }
+  }
+  
+  

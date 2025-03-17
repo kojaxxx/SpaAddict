@@ -1,0 +1,20 @@
+/* Global styles */
+:root {
+    --primary-color: #3f51b5;
+    --accent-color: #ff4081;
+    --warn-color: #f44336;
+    --background-color: #fafafa;
+    --text-color: #333333;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  main {
+    min-height: 100vh;
+  }

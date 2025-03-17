@@ -1,0 +1,49 @@
+.login-container {
+  --mat-card-title-text-font: 'Open Sans', 'Helvetica Neue', sans-serif;
+  --mdc-filled-text-field-label-text-font: 'Open Sans', 'Helvetica Neue', sans-serif;
+  --mdc-filled-text-field-label-text-size: 12px;
+  --mdc-filled-text-field-label-text-weight: 400;
+  --mdc-protected-button-label-text-font: 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #88c336;
+    
+    mat-card {
+      width: 100%;
+      max-width: 400px;
+      margin: 2rem;
+      
+      mat-card-header {
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      
+      mat-card-content {
+        form {
+          display: flex;
+          flex-direction: column;
+          
+          .full-width {
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 16px;
+          }
+          
+          .error-message {
+            color: red;
+            margin-bottom: 1rem;
+            text-align: center;
+          }
+          
+          button {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,82 @@
+<app-header></app-header>
+
+<div class="pricing-form-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Gestion des prix</mat-card-title>
+      </mat-card-header>
+      <form>
+      <div class="price-item">
+        <div *ngIf="!editingField.price_duo" class="price-display">
+          <span class="price-label">Prix Duo: {{pricing.price_duo}}€</span>
+          <button mat-icon-button color="primary" (click)="startEditing('price_duo')">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <div *ngIf="editingField.price_duo" class="price-edit">
+          <mat-form-field>
+            <input matInput type="number" name="duo" [(ngModel)]="tempPricing.price_duo">
+          </mat-form-field>
+          <div class="edit-actions">
+            <button mat-icon-button color="primary" (click)="confirmEdit('price_duo')">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="cancelEdit('price_duo')">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <div *ngIf="!editingField.price_trio" class="price-display">
+          <span class="price-label">Prix Trio: {{pricing.price_trio}}€</span>
+          <button mat-icon-button color="primary" (click)="startEditing('price_trio')">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <div *ngIf="editingField.price_trio" class="price-edit">
+          <mat-form-field>
+            <input matInput type="number" name="trio" [(ngModel)]="tempPricing.price_trio">
+          </mat-form-field>
+          <div class="edit-actions">
+            <button mat-icon-button color="primary" (click)="confirmEdit('price_trio')">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="cancelEdit('price_trio')">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <div *ngIf="!editingField.price_group" class="price-display">
+          <span class="price-label">Prix Groupe: {{pricing.price_group}}€</span>
+          <button mat-icon-button color="primary" (click)="startEditing('price_group')">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <div *ngIf="editingField.price_group" class="price-edit">
+          <mat-form-field>
+            <input matInput type="number" name="group" [(ngModel)]="tempPricing.price_group">
+          </mat-form-field>
+          <div class="edit-actions">
+            <button mat-icon-button color="primary" (click)="confirmEdit('price_group')">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="cancelEdit('price_group')">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="saveSuccess" class="success-message">
+        Prix mis à jour avec succès!
+      </div>
+    </form>
+      <mat-card-content>
+    </mat-card-content>
+</mat-card>
+</div>

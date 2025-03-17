@@ -1,0 +1,574 @@
+ <!-- Preloader -->
+ <div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- Fixed navbar -->
+<div class="navbar main-menu navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span
+                    class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" title="logo" (click)="scrollToElement(slider)"><img src="assets/images/logo.png" alt="logo" /></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right" id="menu">
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(slider)">Accueil</a></li>
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(about)">Qui sommes nous</a></li>
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(services)">Nos espaces</a></li>
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(plans)">Tarifs</a></li>
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(portfolio)">Photos</a></li>
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(booking)">Réservez</a></li>
+                <li><a class="hvr-underline-from-left" data-scroll data-options="easing: easeOutQuart"
+                    (click)="scrollToElement(contact)">Contactez nous</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+<section #slider id="slider">
+    <div class="slider-grid">
+        <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
+                <div class="col-md-12 col-sm-12 item">
+                    <img src="assets/images/slider/slider-img-5.jpg" alt="gallery">
+                    <div class="text right white">
+                        <h2 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">Bienvenue
+                            <strong>chez</strong> <span>SPA Addict</span></h2>
+                    </div>
+                </div>
+            </ng-template>  
+            <ng-container *ngFor="let banner of activeBanners">
+                <ng-template carouselSlide>
+                    <div class="col-md-12 col-sm-12 item">
+                        <img src="{{banner.picture}}" alt="gallery">
+                    </div>
+                </ng-template>  
+            </ng-container>
+            
+          </owl-carousel-o>
+    </div>
+
+</section>
+<section #about id="about">
+    <div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Qui sommes-nous</h2>
+            <div class="separator_wrapper wow bounceIn" data-wow-duration="0.7s" data-wow-delay="0.7s">
+                <div class="separator_first_circle">
+                    <img src="assets/images/green-flower.png" alt="green flower">
+                </div>
+            </div>
+            <p class="helping-text wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">SPA Addict vous
+                accueille avec ses deux espaces privatifs, équipés d'un sauna, un jacuzzi et un hammam. Venez
+                profiter d’un moment de détente unique dans notre centre situé à Neuville-en-Ferrain, à seulement
+                dix minutes de Lille.</p>
+
+            <div class="col-md-6 col-sm-12 text-left wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                <h3>Bienvenue chez SPA Addict</h3>
+                <p class="helping-text">Venez vous détendre en couple, en famille ou entre amis. Nous vous invitons à vivre un moment de
+                    détente, de relaxation et d’évasion dans un cadre spacieux et chaleureux.</p>
+                <p class="helping-text">Dans une ambiance soignée et intime, relaxez-vous et échappez au stress du quotidien. De plus,
+                    Spa Addict met à disposition tout le linge et nécessaire de toilette (serviettes, peignoirs,
+                    chaussons, shampoing, gel douche, démaquillant, cotons et sèche cheveux)</p>
+                <p class="helping-text">Une occasion à fêter, un anniversaire, un enterrement de vie de jeune fille, nous mettrons tout
+                    en oeuvre pour vous faire passer un moment inoubliable.</p>
+                <p class="helping-text">Nos deux espaces communiquent par une porte coulissante, qui est alors ouverte si nécessaire pour
+                    accueillir des groupes (jusqu’à 15 personnes). A chacun son occasion et son événement. Pensez
+                    également au chèque cadeau.</p>
+                <p class="helping-text">Un parking privé est mis à votre disposition.</p>
+
+            </div>
+            <div class="col-md-6 col-sm-12 wow bounceIn" data-wow-duration="0.9s" data-wow-delay="0.9s">
+
+                <div class="circle-img green">
+                    <img src="assets/images/about-img-1.png" class="hvr-rotate" alt=" green ">
+                </div>
+                <div class="circle-img blue">
+                    <img src="assets/images/about-img-2.png" class="hvr-rotate" alt=" blue ">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section #services id="services">
+    <div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Nos Espaces</h2>
+            <div class="separator_wrapper wow bounceIn" data-wow-duration="0.7s" data-wow-delay="0.7s">
+                <div class="separator_first_circle">
+                    <img src="assets/images/green-flower.png" alt="green flower">
+                </div>
+            </div>
+            <p class="helping-text wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">Spa Addict, c'est
+                deux espaces dédiés à votre bien-être, à deux ou à plusieurs.</p>
+            <div class="services-grid">
+                <div class="col-md-6 col-sm-12 services-box wow right-padding-none fadeInLeft"
+                    data-wow-duration="0.9s" data-wow-delay="0.9s">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 right-padding-none">
+                            <div class="img-wrap">
+                                <a href="#"><img src="assets/images/services/services-1.jpg" alt="services-1"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 left-padding-none">
+                            <div class="services-wrap">
+                                <div class="services-caption">
+                                    <h3><a href="#">Espace Nature</a></h3>
+                                    <p>Moment de détente dans un espace végétal où nature rime avec sérénité.</p>
+                                    <a (click)="scrollToElement(booking)" class="btn main-btn hvr-sweep-to-right small-btn"><i
+                                            class="fa fa-angle-right"></i> Réservez</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 services-box left-padding-none wow fadeInRight"
+                    data-wow-duration="0.9s" data-wow-delay="0.9s">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 right-padding-none">
+                            <div class="img-wrap">
+                                <a href="#"><img src="assets/images/services/services-2.jpg" alt="services-2"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 left-padding-none">
+                            <div class="services-wrap">
+                                <div class="services-caption">
+                                    <h3><a href="#">Espace Zen</a></h3>
+                                    <p>Profitez d'un véritable moment d'évasion et offrez-vous de purs moments de
+                                        plénitude.</p>
+                                    <a (click)="scrollToElement(booking)" class="btn main-btn hvr-sweep-to-right small-btn"><i
+                                            class="fa fa-angle-right"></i> Réservez</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section #plans id="plans">
+    <div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Tarifs</h2>
+            <div class="separator_wrapper wow bounceIn" data-wow-duration="0.7s" data-wow-delay="0.7s">
+                <div class="separator_first_circle">
+                    <img src="assets/images/green-flower.png" alt="green flower">
+                </div>
+            </div>
+            <p class="helping-text wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                Nous appliquons un tarif unique de de {{pricing?.price_duo}}€ pour 2 personnes, {{pricing?.price_trio}}€ pour 3 et à partir de la 4e
+                personne le tarif est de {{pricing?.price_group}}€ par personne.
+                <br />
+                <br />
+                Nous mettons <u>gracieusement</u> à votre disposition de l’eau, une boisson soft au choix (par
+                personne) et une collation (plateau salé ou sucré) à <u>consommer sur place</u>.
+            </p>
+
+
+            <div class="flat">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="plan wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                        <div class="flower"></div>
+                        <h4 class="plan-name">Duo</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Durée</p>
+                                <strong>2 heures</strong>
+                            </li>
+                            <li>
+                                <p>Pour</p>
+                                <strong>2 personnes</strong>
+                            </li>
+                            <li>
+                                <p>Avec</p>
+                                <strong>
+                                    Jacuzzi<br>
+                                    Hammam<br>
+                                    Sauna
+                                </strong>
+                            </li>
+                        </ul>
+                        <div class="price-wrap">
+                            <div class="price-box">
+                                <strong>{{pricing?.price_duo}}€</strong>
+                            </div>
+                        </div>
+                        <a (click)="scrollToElement(booking)" class="btn price-btn btn-lg"><i class="fa fa-angle-right"></i> Réservez</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="plan wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                        <div class="flower"></div>
+                        <h4 class="plan-name">Trio</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Durée</p>
+                                <strong>2 heures</strong>
+                            </li>
+                            <li>
+                                <p>Pour</p>
+                                <strong>3 personnes</strong>
+                            </li>
+                            <li>
+                                <p>Avec</p>
+                                <strong>
+                                    Jacuzzi<br>
+                                    Hammam<br>
+                                    Sauna
+                                </strong>
+                            </li>
+                        </ul>
+                        <div class="price-wrap">
+                            <div class="price-box">
+                                <strong>{{pricing?.price_trio}}€</strong>
+                            </div>
+                        </div>
+                        <a (click)="scrollToElement(booking)" class="btn price-btn btn-lg"><i class="fa fa-angle-right"></i> Réservez</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="plan wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                        <div class="flower"></div>
+                        <h4 class="plan-name">Groupes</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Durée</p>
+                                <strong>2 heures</strong>
+                            </li>
+                            <li>
+                                <p>A partir de</p>
+                                <strong>4 personnes</strong>
+                            </li>
+                            <li>
+                                <p>Avec</p>
+                                <strong>
+                                    Jacuzzi<br>
+                                    Hammam<br>
+                                    Sauna
+                                </strong>
+                            </li>
+                        </ul>
+                        <div class="price-wrap">
+                            <div class="price-box">
+                                <strong>{{pricing?.price_group}}€</strong>
+                            </div>
+                            <p style="color:#ffffff">par personne</p>
+                        </div>
+                        <a (click)="scrollToElement(booking)" class="btn price-btn btn-lg"><i class="fa fa-angle-right"></i> Réservez</a>
+                    </div>
+                </div>
+                
+            </div>
+            <p class="helping-text wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                Les réservations se font uniquement par télephone, c’est à cette occasion que vous nous préciserez le choix entre plateau salé ou sucré. Le choix de la salle se fait en fonction de la disponibilité.
+            </p>
+        </div>
+    </div>
+</section>
+<section #portfolio id="portfolio">
+    <div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Quelques photos</h2>
+            <div class="separator_wrapper wow bounceIn" data-wow-duration="0.7s" data-wow-delay="0.7s">
+                <div class="separator_first_circle">
+                    <img src="assets/images/green-flower.png" alt="green flower">
+                </div>
+            </div>
+            <p class="helping-text wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">Découvrez notre Spa et nos espaces en photo.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="portfolio-filter wow bounceIn" data-wow-duration="0.8s" data-wow-delay="0.8s">
+                    <li><a class="btn active margin-5" href="#" data-filter="*">Toutes les photos</a></li>
+                    <li><a class="btn margin-5" href="#" data-filter=".nature">Espace nature</a></li>
+                    <li><a class="btn margin-5" href="#" data-filter=".zen">Espace zen</a></li>
+                    <li><a class="btn margin-5" href="#" data-filter=".divers">Divers</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-grid">
+        <ul class="portfolio-items col-4">
+            <li class="portfolio-item zen">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio1.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio1.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio2.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio2.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item zen divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio3.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio3.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio4.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio4.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item zen">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio5.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio5.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio6.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio6.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio7.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio7.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio8.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio8.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio9.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio9.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio10.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio10.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio11.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio11.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio12.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio12.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio13.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio13.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item divers">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio14.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio14.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item zen">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio15.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio15.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="portfolio-item nature">
+                <div class="item-main">
+                    <div class="portfolio-image">
+                        <img src="assets/images/portfolio/thumbs/portfolio16.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn"
+                                href="assets/images/portfolio/portfolio16.jpg"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section #booking id="booking">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                <h3>Réservez dès maintenant</h3>
+                <p><i class="fa fa-phone"></i> <span>Appelez-nous au</span> 03 20 37 99 14</p>
+                <p><strong>ou</strong></p>
+                <p><i class="fa fa-envelope-o"></i> <span>par email:</span> spaaddictneuville&#64;yahoo.fr</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- plans end -->
+<section #contact id="contact">
+    <div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Restons en contact</h2>
+            <div class="separator_wrapper wow bounceIn" data-wow-duration="0.7s" data-wow-delay="0.7s">
+                <div class="separator_first_circle">
+                    <img src="assets/images/green-flower.png" alt="green flower">
+                </div>
+            </div>
+            <p class="helping-text wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">Besoin d'un renseignement, appelez-nous au <strong>03 20 37 99 14</strong> ou envoyez-nous un message avec vos coordonnées pour que nous puissions vous répondre.</p>
+            <div class="col-md-12">
+                <form class="form-horizontal contact-form" id="contact-form" method="post" (submit)="sendEmail($event)">
+                    <div class="row">
+                        <div class="col-md-6 wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.9s">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="name" required placeholder="Votre nom *">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="email" class="form-control" name="email" required
+                                        placeholder="Votre adresse email *">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Votre numéro de téléphone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="0.9s">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control" required placeholder="Votre message *" name="message"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn main-btn hvr-sweep-to-right"><i
+                                    class="fa fa-angle-right"></i> Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="emailSent" class="email-sent-message">Le message a été envoyé.</div>
+            </div>
+        </div>
+    </div>
+    <div class="locations">
+        <div class="container">
+            <div class="row">
+                <div class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                    <h4>Neuville-en-Ferrain</h4>
+                    <ul class="list-unstyled">
+                        <li>104, rue de Tourcoing</li>
+                        <li>03 20 37 99 14</li>
+                        <li><a href="#">spaaddictneuville&#64;yahoo.fr</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="map">
+    <div id="contact_map"></div>
+</section>
+
+
+<footer>
+    <div class="foot-line">
+        <p>&copy; 2019 SPA Addict</p>
+    </div>
+</footer>
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>

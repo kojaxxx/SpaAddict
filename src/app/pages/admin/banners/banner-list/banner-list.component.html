@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="banner-list-container">
+    <div class="header">
+      <h1>Gestion des bannières d'évènements</h1>
+      <button mat-raised-button color="primary" routerLink="/admin/banners/create">
+        <mat-icon>add</mat-icon> Ajouter une bannière
+      </button>
+    </div>
+  
+    <div class="content">
+      <table mat-table [dataSource]="banners" class="mat-elevation-z4">
+        <!-- Image Column -->
+        <ng-container matColumnDef="picture">
+          <th mat-header-cell *matHeaderCellDef>Image</th>
+          <td mat-cell *matCellDef="let banner">
+            <img [src]="banner.picture" alt="Image" class="banner-thumbnail">
+          </td>
+        </ng-container>
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nom</th>
+          <td mat-cell *matCellDef="let banner">{{banner.name}}</td>
+        </ng-container>
+  
+        <!-- Active Column -->
+        <ng-container matColumnDef="isActive">
+          <th mat-header-cell *matHeaderCellDef>Actif / Inactif</th>
+          <td mat-cell *matCellDef="let banner">
+            <mat-slide-toggle
+              [checked]="banner.isActive"
+              (change)="toggleActive(banner)"
+              color="primary">
+              {{banner.isActive ? 'Actif' : 'Inactif'}}
+            </mat-slide-toggle>
+          </td>
+        </ng-container>
+  
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let banner">
+            <button mat-icon-button color="primary" [routerLink]="['/admin/banners/edit', banner.id]">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteBanner(banner)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <div class="no-data" *ngIf="banners.length === 0">
+        <p>Aucune bannière évènement trouvé. Créez votre première bannière!</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="banner-form-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ isEditMode ? 'Editer la' : 'Créer une' }} Bannière</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+          <div class="form-field">
+            <mat-form-field class="full-width">
+              <mat-label>Nom de la bannière</mat-label>
+              <input matInput formControlName="name" required>
+              <mat-error *ngIf="bannerForm.get('name')?.hasError('required')">
+                Le nom est requis
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="form-field">
+            <mat-checkbox formControlName="isActive">Actif</mat-checkbox>
+          </div>
+  
+          <div class="form-field">
+            <label for="imageUpload" class="image-label">Image de la bannière</label>
+            <input 
+              type="file" 
+              id="imageUpload" 
+              accept="image/*" 
+              (change)="onImageSelected($event)" 
+              [disabled]="isUploading"
+            >
+            
+            <div class="image-preview" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Aperçu de la bannière">
+            </div>
+            
+            <div *ngIf="isUploading" class="upload-progress">
+              <p>Chargement: {{ uploadProgress.toFixed(0) }}%</p>
+              <div class="progress-bar">
+                <div class="progress-fill" [style.width.%]="uploadProgress"></div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-actions">
+            <button 
+              mat-button 
+              type="button" 
+              routerLink="/admin/banners"
+              [disabled]="isUploading"
+            >
+              Annuler
+            </button>
+            <button 
+              mat-raised-button 
+              color="primary" 
+              type="submit" 
+              [disabled]="bannerForm.invalid || isUploading"
+            >
+              {{ isEditMode ? 'Mise à jour de la' : 'Création de la' }} Bannière
+            </button>
+
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
